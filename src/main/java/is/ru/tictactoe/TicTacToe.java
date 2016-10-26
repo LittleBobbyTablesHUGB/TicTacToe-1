@@ -18,7 +18,7 @@ public class TicTacToe {
 		//Set the players marks to X and O
 		playerMark = new char[2];
 		playerMark[0] = 'X';
-		playerMark[1] = 'Y';
+		playerMark[1] = 'O';
 		//Set the current player as 0(X)
 		currentPlayer = 0;
 	}

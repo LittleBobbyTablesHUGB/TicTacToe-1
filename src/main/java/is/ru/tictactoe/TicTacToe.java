@@ -7,6 +7,7 @@ public class TicTacToe {
 	public Board gameBoard;
 	public char[] playerMark;
 	public int currentPlayer;
+	public GameState gameState;
 
 	public TicTacToe() {
 		//Initialize the game
@@ -21,6 +22,7 @@ public class TicTacToe {
 		playerMark[1] = 'O';
 		//Set the current player as 0(X)
 		currentPlayer = 0;
+		gameState = GameState.isPlaying;
 	}
 
 	public void playerMove(int row, int col){
@@ -36,8 +38,21 @@ public class TicTacToe {
 		}
 	}
 
-        // Change player to see who is playing
+        //See who is playing
 	public char isPlaying(){
 		return playerMark[currentPlayer];
 	}
+	
+	public void play(){
+		
+		//Check if we have a winner and change the gameState
+		if(gameBoard.isWinner()){
+			if(gameBoard.winner == 'X'){
+				gameState = GameState.x_winner;
+			}
+			else if(gameBoard.winner == 'Y'){
+				gameState = GameState.o_winner;
+			}
+		}
+	} 
 }

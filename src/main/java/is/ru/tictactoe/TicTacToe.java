@@ -34,5 +34,6 @@ public class TicTacToe {
 			//Switch players
 			currentPlayer = 1-currentPlayer;
 		}
-	}	
+	}
+
 }

@@ -11,7 +11,7 @@ public class TicTacToeTest {
 	public void testPlayerMove() {
 		TicTacToe game = new TicTacToe();
 		game.playerMove(2,2);
-		assertEquals(game.playerMark[1 - game.currentPlayer], game.gameBoard[2][2]); 
+		assertEquals(game.playerMark[1 - game.currentPlayer], game.gameBoard.board[2][2]); 
 	}
 	
 	@Test

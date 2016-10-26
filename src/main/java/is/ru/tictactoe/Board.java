@@ -21,7 +21,7 @@ public class Board{
                 }
         }
 
-	public boolean isLegal(int col, int row){
+	public boolean isLegal(int row, int col){
 		if((col < 0 || col > 2) || (row > 2 || row < 0) || (board[row][col] != ' ')){
 			return false;
 		}

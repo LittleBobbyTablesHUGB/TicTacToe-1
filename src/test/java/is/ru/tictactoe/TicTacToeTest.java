@@ -23,4 +23,23 @@ public class TicTacToeTest {
 		//If move was illegal same player should be playing
 		assertEquals(prevPlayer, afterMovePlayer);
 	}
+	@Test
+	public void testIfOneIsPlaying(){
+		TicTacToe game = new TicTacToe();
+		game.playerMove(1,1);
+		assertEquals('O', game.isPlaying());
+	}
+
+        @Test
+        public void testIfTwoMoves(){
+                TicTacToe game = new TicTacToe();
+                game.playerMove(1,1);
+		game.playerMove(2,2);
+                assertEquals('X', game.isPlaying());
+        }
+        @Test
+        public void testNoMovePlaying(){
+                TicTacToe game = new TicTacToe();
+                assertEquals('X', game.isPlaying());
+        }
 }

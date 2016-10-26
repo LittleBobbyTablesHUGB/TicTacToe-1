@@ -21,6 +21,13 @@ public class BoardTest{
                 TicTacToe game = new TicTacToe();
                 assertEquals(false,game.gameBoard.isLegal(5,3));
         }
+	
+	@Test
+        public void testPrintBoard() {
+                TicTacToe game = new TicTacToe();
+                game.gameBoard.drawGameBoard();
+                assertEquals(1,1);
+        }
 
 
 }

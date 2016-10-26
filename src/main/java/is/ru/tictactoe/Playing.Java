@@ -5,7 +5,10 @@ import java.util.*;
 
 Public Class Playing
 {
-	
+	Public Playin(startgame)
+	{
+		
+	}		
 
 }
 

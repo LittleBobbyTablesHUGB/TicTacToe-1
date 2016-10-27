@@ -10,12 +10,10 @@ public class Playing
         
        	public static Scanner sc = new Scanner(System.in);
 
-        public Playing()
-        {
-          startGame();
-          
+        public static void main(String[] args){
+        	startGame();
         }
-        public void play(){
+        public static void play(){
 
                TicTacToe game = new TicTacToe();
                 
@@ -42,7 +40,7 @@ public class Playing
         }
 
                 
-        public void startGame(){
+        public static void startGame(){
                 System.out.println("Ready to play TicTacToe ?");
                 char startPlay= sc.next().toLowerCase().charAt(0);
 		if (startPlay == 'y'){

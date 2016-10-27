@@ -89,4 +89,37 @@ public class BoardTest{
 		game.playerMove(2,0);
 		assertEquals(true,game.gameBoard.isWinner());
         }
+
+	@Test
+        public void testIsDrawTrue() {
+                TicTacToe game = new TicTacToe();
+
+                game.playerMove(1,0);
+                game.playerMove(2,1);
+                game.playerMove(2,2);
+                game.playerMove(0,2);
+                game.playerMove(2,0);
+                game.playerMove(1,2);
+                game.playerMove(0,1);
+                game.playerMove(0,0);
+                game.playerMove(1,1);
+
+                assertEquals(true, game.gameBoard.isDraw());
+        }
+
+         @Test
+        public void testIsDrawFalse() {
+                TicTacToe game = new TicTacToe();
+
+                game.playerMove(0,0);
+                game.playerMove(0,1);
+                game.playerMove(2,2);
+                game.playerMove(0,2);
+                game.playerMove(1,0);
+                game.playerMove(2,0);
+                game.playerMove(1,2);
+                game.playerMove(2,1);           
+                assertEquals(false, game.gameBoard.isDraw());
+        }	
+
 }

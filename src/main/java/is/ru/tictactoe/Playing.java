@@ -28,11 +28,13 @@ public class Playing
                         game.playerMove(inputRow, inputCol);
                 }
                 if(false)
-                {
+                {       
+                        game.gameBoard.isWinner();
                         System.out.println("There was a draw!");
                 }
                 else if(game.gameBoard.isWinner())
-                {
+                {     
+                        game.gameBoard.drawGameBoard();
                         System.out.println("The winner is: " + game.gameBoard.winner);
                 }
                 startGame();

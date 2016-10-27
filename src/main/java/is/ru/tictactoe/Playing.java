@@ -20,7 +20,7 @@ public class Playing
                 while(!game.gameBoard.isWinner()){
                         game.gameBoard.drawGameBoard();
                         char whoIsPlaying = game.isPlaying(); 
-                        System.out.println("Player " + whoIsPlaying + "is playing, please type in 2 numbers to make a move:");
+                        System.out.println("Player " + whoIsPlaying + " is playing, please type in 2 numbers to make a move: ");
                         //Get move from current player
                         
                         int inputRow = sc.nextInt();
@@ -34,7 +34,7 @@ public class Playing
                 }
                 else if(game.gameBoard.isWinner())
                 {
-                        System.out.println("The winner is:" + game.gameBoard.winner);
+                        System.out.println("The winner is: " + game.gameBoard.winner);
                 }
                 startGame();
         }

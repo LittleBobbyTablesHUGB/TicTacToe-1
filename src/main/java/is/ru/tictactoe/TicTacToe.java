@@ -50,9 +50,8 @@ public class TicTacToe {
 			if(gameBoard.winner == 'X'){
 				gameState = GameState.x_winner;
 			}
-			else if(gameBoard.winner == 'Y'){
+			else if(gameBoard.winner == 'O'){
 				gameState = GameState.o_winner;
 			}
 		}
-	} 
-}
+	} }

@@ -7,22 +7,21 @@ import java.util.Scanner;
 
 public class Playing
 {
-        
-       	public static Scanner sc = new Scanner(System.in);
 
-        public static void main(String[] args){
-        	startGame();
+        public static Scanner sc = new Scanner(System.in);
+	public static void main(String[] args){
+        startGame();
         }
         public static void play(){
 
                TicTacToe game = new TicTacToe();
-                
+
                 while(!game.gameBoard.isWinner()){
                         game.gameBoard.drawGameBoard();
-                        char whoIsPlaying = game.isPlaying(); 
+                        char whoIsPlaying = game.isPlaying();
                         System.out.println("Player " + whoIsPlaying + " is playing, please type in 2 numbers to make a move: ");
                         //Get move from current player
-                        
+
                         int inputRow = sc.nextInt();
                         int inputCol = sc.nextInt();
                         //Make the move for the player
@@ -39,18 +38,19 @@ public class Playing
                 startGame();
         }
 
-                
+
         public static void startGame(){
                 System.out.println("Ready to play TicTacToe ?");
                 char startPlay= sc.next().toLowerCase().charAt(0);
-		if (startPlay == 'y'){
+                if (startPlay == 'y'){
                         play();
                 }
 
                 else{
-                    startGame();
-          	}
-                
- 	}
+                    System.out.println("Thank you and have a nice day ");
+                }
 
-}     
+        }
+
+}
+

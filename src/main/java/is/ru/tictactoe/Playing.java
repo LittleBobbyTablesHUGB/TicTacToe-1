@@ -3,32 +3,56 @@ package is.ru.tictactoe;
 import java.io.*;
 import static java.lang.System.out;
 import java.util.*;
+import java.util.Scanner;
 
 public class Playing
 {
-	public Playing()
-	{
-		
-	}
-		
-	public void startGame(){
-		try{
-			System.out.println("Ready to play TicTacToe ?");
-			char input = (char) System.in.read();
-		
-		if (input == 'Y' || input == 'y'){
-			throw new Exception();
-			//TODO:playing();
-		}
+        
+       	public static Scanner sc = new Scanner(System.in);
 
-		else{
-			startGame();
-		}
-		}	
-		catch (Exception e){
-			System.out.println("Eception has been caught");
-		} 
-	}
+        public Playing()
+        {
+          startGame();
+          
+        }
+        public void play(){
 
-}
+               TicTacToe game = new TicTacToe();
+                
+                while(!game.gameBoard.isWinner()){
+                        game.gameBoard.drawGameBoard();
+                        char whoIsPlaying = game.isPlaying(); 
+                        System.out.println("Player " + whoIsPlaying + "is playing, please type in 2 numbers to make a move:");
+                        //Get move from current player
+                        
+                        int inputRow = sc.nextInt();
+                        int inputCol = sc.nextInt();
+                        //Make the move for the player
+                        game.playerMove(inputRow, inputCol);
+                }
+                if(false)
+                {
+                        System.out.println("There was a draw!");
+                }
+                else if(game.gameBoard.isWinner())
+                {
+                        System.out.println("The winner is:" + game.gameBoard.winner);
+                }
+                startGame();
+        }
 
+                
+        public void startGame(){
+                System.out.println("Ready to play TicTacToe ?");
+                char startPlay= sc.next().toLowerCase().charAt(0);
+		if (startPlay == 'y'){
+                        play();
+                }
+
+                else{
+                    startGame();
+          	}
+                
+ 	}
+
+}     

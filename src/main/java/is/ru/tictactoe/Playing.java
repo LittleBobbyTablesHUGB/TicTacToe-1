@@ -42,16 +42,19 @@ public class Playing
 
 
         public static void startGame(){
-                System.out.println("Ready to play TicTacToe ?");
+                System.out.println("Do you want to play TicTacToe? y/ to play or q/ to quit the game");
                 char startPlay= sc.next().toLowerCase().charAt(0);
                 if (startPlay == 'y'){
                         play();
                 }
 
-                else{
-                    System.out.println("Thank you and have a nice day ");
-                }
+                else if (startPlay == 'q'){
 
+                    	System.out.println("Thank you and see you soon ");
+                }
+		else{
+			startGame();
+		}
         }
 
 }

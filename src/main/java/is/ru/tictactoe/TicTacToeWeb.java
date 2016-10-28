@@ -13,7 +13,6 @@ public class TicTacToeWeb implements SparkApplication{
 			setPort(Integer.valueOf(port));
 		}
 		ttt.init();	
-		//get("/random", (req, res) -> game.gameBoard.drawGameBoard());
 	}
 
 	private TicTacToe game;
@@ -23,29 +22,42 @@ public class TicTacToeWeb implements SparkApplication{
 			game = new TicTacToe();
 		}
 		
-		//get("/playTicTacToe", (req, res) -> "Player X:" + game.isPlaying());
 
-		post("/playTicTacToe",new Route(){
-			@Override
-			public Object handle(Request request, Response response) {
-				game = new TicTacToe();
-				return true;
-			}
-		});
-
-		/*post(new Route("/id"){
+		post("/id",new Route(){
 			@Override
 			public Object handle(Request request, Response response) {
 				Integer number = Integer.valueOf(request.queryParams("id"));
 
-				if(game.gameBoard.isDraw()){
-					return 2; //TODO change
+				if(number == 1){
+					game.playerMove(0,0);
 				}
-				else if(game.gameBoard.isWinner()){
-					return 1; //TOdo change
+				else if(number == 2){
+					game.playerMove(0,1);
 				}
+				else if(number == 3){
+					game.playerMove(0,2);
+				}
+				else if(number == 4){
+					game.playerMove(1,0);				
+				}
+				else if(number == 5){
+					game.playerMove(1,1);
+				}
+				else if(number == 6){
+					game.playerMove(1,2);
+				}
+				else if(number == 7){
+					game.playerMove(2,0);	
+				}
+				else if(number == 8){
+					game.playerMove(2,1);	
+				}
+				else if(number == 9){
+					game.playerMove(2,2);
+				}
+				return game.isPlaying();
 			}
-		});*/
+		});
 
 	}
 }

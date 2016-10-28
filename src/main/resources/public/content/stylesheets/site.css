@@ -27,14 +27,14 @@ td {
         font-size:1.5em;
         line-height:1;
       }
-      &.cross:before {
-        content:"X";
-        color:#f47835;
-      }
-      &.circle:before {
-        content:"O";
-        color:#a200ff;
-      }
+}
+
+.circle{
+    color:#d41243;
+}
+
+.cross{
+    color:#f47835;
 }
 
 input.btn {

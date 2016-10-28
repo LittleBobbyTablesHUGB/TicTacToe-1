@@ -1,7 +1,7 @@
 Development Manual-Þróunarhandbók
 =================================
 
-Í þessari handbók verður farið yfir það sem þarf til þess að keyra eftirfarandi verkefni í nýrri Tölvu. Nokkur forrit eru nauðsýnleg til þess að fá þetta verkefni til þess að keyra og eru þau:
+Í þessari handbók verður farið yfir það sem þarf til þess að keyra eftirfarandi verkefni í óuppsettri Tölvu. Nokkur forrit eru nauðsýnleg til þess að fá þetta verkefni til þess að keyra og eru þau:
 
    - Git
 

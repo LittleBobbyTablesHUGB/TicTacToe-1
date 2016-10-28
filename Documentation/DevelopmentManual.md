@@ -1,5 +1,5 @@
-Development Manual-Þróunarhandbók
-=================================
+Development Manual
+==================
 
 Í þessari handbók verður farið yfir það sem þarf til þess að keyra eftirfarandi verkefni í óuppsettri Tölvu. Nokkur forrit eru nauðsýnleg til þess að fá þetta verkefni til þess að keyra og eru þau:
 
@@ -9,8 +9,8 @@ Development Manual-Þróunarhandbók
 
    - Gradle
 
-1.Uppsetning á Git
-==================
+1.Git
+=====
 
 Útgáfustjórnunarkerfið sem notað er í verkefninu er Git.
 Til þess að fá aðgang að forritinu þarftu að byrja á að skrá þig sem notanda á Github ef þú er ekki nú þegar notandi.
@@ -30,8 +30,8 @@ Mikilvægt er að vera með rétta útgáfu af Java, hægt er að athuga hvaða 
 Við þurfum einnig að vera með Gradle og það er hægt að ná það með þessari skipun :
 - sudo apt-get install gradle
 
-4. Leikurinn
-============
+4. Tic Tac Toe
+==============
 
 Til að komast inn á GitHub þar sem leikurinn er staðsettur þarftu að gefa eftirfarandi skipanir inn á Git-Bash:
 - cd TicTacToe-1

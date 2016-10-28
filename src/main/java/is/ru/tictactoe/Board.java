@@ -81,20 +81,22 @@ public class Board{
 	}
 
 	 public void drawGameBoard(){
-                System.out.println("   " + board[0][0] + "|   " + board[0][1] + "|   " + board[0][2]);
-                System.out.println("---------------");
-                System.out.println("   " + board[1][0] + "|   " + board[1][1] + "|   " + board[1][2]);
-                System.out.println("---------------");
-                System.out.println("   " + board[2][0] + "|   " + board[2][1] + "|   " + board[2][2]);
-
+                System.out.println("               ");
+		System.out.println("  " + board[0][0] + " |  " + board[0][1] + " |  " + board[0][2]);
+                System.out.println("--------------");
+                System.out.println("  " + board[1][0] + " |  " + board[1][1] + " |  " + board[1][2]);
+                System.out.println("--------------");
+                System.out.println("  " + board[2][0] + " |  " + board[2][1] + " |  " + board[2][2]);
+		System.out.println("               ");
         }
 	public void drawBoardNumbers(){
+		System.out.println("               ");
 		System.out.println("0 0" + table[0][0] + "|0 1" + table[0][1] + "|0 2" + table[0][2]);
-                System.out.println("---------------");
+                System.out.println("--------------");
                 System.out.println("1 0" + table[1][0] + "|1 1" + table[1][1] + "|1 2" + table[1][2]);
-                System.out.println("---------------");
+                System.out.println("--------------");
                 System.out.println("2 0" + table[2][0] + "|2 1" + table[2][1] + "|2 2" + table[2][2]);
-		System.out.println("===============");
+		System.out.println("               ");
 
 	}
 	public boolean isDraw(){

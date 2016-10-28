@@ -17,6 +17,7 @@ public class Playing
                TicTacToe game = new TicTacToe();
 
                 while(!game.gameBoard.isWinner() && !game.gameBoard.isDraw()){
+			game.gameBoard.drawBoardNumbers();
                         game.gameBoard.drawGameBoard();
                         char whoIsPlaying = game.isPlaying();
                         System.out.println("Player " + whoIsPlaying + " is playing, please type in 2 numbers to make a move: ");

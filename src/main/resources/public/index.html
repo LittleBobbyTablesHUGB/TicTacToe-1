@@ -9,8 +9,7 @@
     </head>
     <body>
         <h1>Little Bobby Tables Tic Tac Toe</h1>
-        <div class="gameMessage"></div>
-        <div class="whosTurn"></div>
+        <div id="whosTurn">Player X´s turn</div>
         <table id="gameBoard">
             <tr>
                 <td id="1"></td>
@@ -28,6 +27,6 @@
                 <td id="9"></td>
             </tr>
         </table>
-        <input class="btn" value="Reset Game" type="button"></input>
+        <input class="btn" value="Reset Game" onclick="playGame()" type="button"></input>
     </body>
 </html>

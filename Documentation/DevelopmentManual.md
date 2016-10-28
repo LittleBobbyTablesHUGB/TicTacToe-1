@@ -14,7 +14,7 @@ Development Manual-Þróunarhandbók
 
 Útgáfustjórnunarkerfið sem notað er í verkefninu er Git.
 Til þess að fá aðgang að forritinu þarftu að byrja á að skrá þig sem notanda á Github ef þú er ekki nú þegar notandi.
-Þegar það er komið ferð þú inn á (https://github.com/LittleBobbyTablesHUGB/TicTacToe-1) og getur þar smellt á hnappinn clone/download og valið þar um að opna á desktopi, hala niður zip skrá eða fara inn í GitBash og keyra þar skipunina git clone (http://https://github.com/LittleBobbyTablesHUGB/TicTacToe-1.git)
+Þegar það er komið ferð þú inn á https://github.com/LittleBobbyTablesHUGB/TicTacToe-1 og getur þar smellt á hnappinn clone/download og valið þar um að opna á desktopi, hala niður zip skrá eða fara inn í GitBash og keyra þar skipunina git clone (http://https://github.com/LittleBobbyTablesHUGB/TicTacToe-1.git)
 Einnig er hægt að nálgast ítarlegri leiðbeiningar hér :(https://help.github.com/articles/set-up-git/)
 
 2. Java

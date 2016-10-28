@@ -35,11 +35,11 @@ public class Board{
 			return true;
 		}
 		else if( board[0][1]==board[1][1] && board[1][1] == board[2][1] && (board[0][1]=='X' || board[0][1]=='O')){
-                	winner = board[0][0];
+                	winner = board[0][1];
 			return true;
 		}
 		else if(board[0][2]==board[1][2] && board[1][2] == board[2][2] && (board[0][2]=='X' || board[0][2]=='O')){
-                	winner = board[0][0];
+                	winner = board[0][2];
 			return true;
 		}
     		else if( board[0][0]==board[0][1] && board[0][1] == board[0][2] && (board[0][0]=='X' || board[0][0]=='O')){

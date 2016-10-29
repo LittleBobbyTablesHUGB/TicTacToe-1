@@ -1,1 +1,1 @@
-web: java -jar target/TicTacToe
+web: build/install/TicTacToe/bin/TicTacToe

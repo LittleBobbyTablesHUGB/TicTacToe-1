@@ -43,7 +43,7 @@ public class IndexSeleniumTest{
 
 	@Test
 		public void testOneClick(){
-			driver = new FirefoxDriver(capabilities);
+			driver = new ChromeDriver();
 			WebDriverWait webWait = new WebDriverWait(driver,20);
 			driver.get(baseUrl);
 			driver.findElement(By.id("1")).click();

@@ -9,10 +9,17 @@ public class TicTacToe {
 	public int currentPlayer;
 	public GameState gameState;
 
+	/**
+	* Constructor for the TicTacToe class
+	*/
 	public TicTacToe() {
 		//Initialize the game
 		initializeGame();
 	}
+
+	/**
+	* Initializes the game
+	*/
 	private void initializeGame() {
 		//Initialize the board
 		gameBoard = new Board();
@@ -24,7 +31,13 @@ public class TicTacToe {
 		currentPlayer = 0;
 		gameState = GameState.isPlaying;
 	}
-
+	
+	/**
+	* Makes the player move on the Board that is beeing played
+	* 
+	* @param row the row of the move
+	* @param col the column of the move
+	*/
 	public void playerMove(int row, int col){
 		//check if the move that the player move is legal
 		if(!gameBoard.isLegal(row, col)){
@@ -38,20 +51,13 @@ public class TicTacToe {
 		}
 	}
 
-        //See who is playing
+        /**
+	* Returns the player that has the next move
+	*
+	* @return the mark of the player that has the next move
+	*/
 	public char isPlaying(){
 		return playerMark[currentPlayer];
 	}
-	
-	public void play(){
-		
-		//Check if we have a winner and change the gameState
-		if(gameBoard.isWinner()){
-			if(gameBoard.winner == 'X'){
-				gameState = GameState.x_winner;
-			}
-			else if(gameBoard.winner == 'O'){
-				gameState = GameState.o_winner;
-			}
-		}
-	} }
+
+}

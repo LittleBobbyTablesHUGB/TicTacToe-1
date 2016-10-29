@@ -5,6 +5,15 @@ jdk:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
+install:
+ - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ - heroku plugins:install https://github.com/ddollar/heroku-push
+
+script:
+- ./gradlew check
+- heroku push --app littlebobbytablestttstaging
+- ./gradlew seleniumXvfb
+
 deploy:
   provider: heroku
   api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc

@@ -19,6 +19,11 @@ repositories {
     jcenter()
 }
 
+sourceSets {
+    selenium
+    seleniumXvfb
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
@@ -27,6 +32,17 @@ dependencies {
 
     // testing framework
     testCompile 'junit:junit:4.12'
+
+    // Selenium dependencies
+    seleniumCompile 'junit:junit:4.12'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'
+
+    seleniumXvfbCompile 'junit:junit:4.12'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
+    seleniumXvfbCompile 'org.seleniumhq.selenium:selenium-java:2.48.2'	
+   
+ 
 }
 
 test {
@@ -54,4 +70,21 @@ check.dependsOn jacocoTestReport
 task myJavadocs(type: Javadoc) {
   source = sourceSets.main.allJava
   source += sourceSets.test.allJava
+}
+
+task selenium(type: Test, dependsOn: installDist){
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+}
+task seleniumXvfb(type: Test, dependsOn: installDist) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+
+    doFirst {
+        'build/install/TicTacToe/bin/TicTacToe &'.execute()
+    }
+    
+    doLast {
+	'sh -e /etc/init.d/xvfb stop'.execute()        
+    }
 }

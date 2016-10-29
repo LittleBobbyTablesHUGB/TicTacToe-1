@@ -48,3 +48,10 @@ jacocoTestReport {
 }
 
 check.dependsOn jacocoTestReport
+
+
+
+task myJavadocs(type: Javadoc) {
+  source = sourceSets.main.allJava
+  source += sourceSets.test.allJava
+}

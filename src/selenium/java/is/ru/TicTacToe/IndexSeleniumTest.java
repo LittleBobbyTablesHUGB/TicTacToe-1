@@ -20,11 +20,13 @@ public class IndexSeleniumTest{
 	static WebDriver driver;
 	static String baseUrl;
 	static String port;
-
+	System.setProperty("webdriver.gecko.driver", "pathTogeckodriver");
+	DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+	capabilities.setCapability("marionette", true);
 
 	@BeforeClass
 		public static void before() {
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver(capabilities);
 			baseUrl = "https://littlebobbytablestttstaging.herokuapp.com/";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
@@ -36,7 +38,7 @@ public class IndexSeleniumTest{
 
 	@Test
 		public void testTitle(){
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver(capabilities);
 			driver.get(baseUrl);
 			assertEquals("Tic Tac Toe", driver.getTitle());
 			driver.close();
@@ -44,7 +46,7 @@ public class IndexSeleniumTest{
 
 	@Test
 		public void testOneClick(){
-			driver = new FirefoxDriver();
+			driver = new FirefoxDriver(capabilities);
 			WebDriverWait webWait = new WebDriverWait(driver,20);
 			driver.get(baseUrl);
 			driver.findElement(By.id("1")).click();

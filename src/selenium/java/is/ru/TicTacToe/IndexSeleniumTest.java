@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.support.ui.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,13 +20,10 @@ public class IndexSeleniumTest{
 	static WebDriver driver;
 	static String baseUrl;
 	static String port;
-	System.setProperty("webdriver.gecko.driver", "pathTogeckodriver");
-	DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-	capabilities.setCapability("marionette", true);
-
+	
 	@BeforeClass
 		public static void before() {
-			driver = new FirefoxDriver(capabilities);
+			driver = new ChromeDriver();
 			baseUrl = "https://littlebobbytablestttstaging.herokuapp.com/";
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		}
@@ -38,7 +35,7 @@ public class IndexSeleniumTest{
 
 	@Test
 		public void testTitle(){
-			driver = new FirefoxDriver(capabilities);
+			driver = new ChromeDriver();
 			driver.get(baseUrl);
 			assertEquals("Tic Tac Toe", driver.getTitle());
 			driver.close();

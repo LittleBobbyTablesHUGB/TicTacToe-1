@@ -5,6 +5,7 @@ APP="TicTacToe"
 # Always deploy new version, clean before
 bin/clean
 bin/package
+bin/unit_test
 
 # If the installation folder exists under /tmp, remove it
 test -f ~/tmp/${APP} && rm -r ~/tmp/${APP}

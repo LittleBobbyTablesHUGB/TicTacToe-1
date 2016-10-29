@@ -10,6 +10,7 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'jacoco'
 
 mainClassName = "is.ru.tictactoe.TicTacToeWeb"
 
@@ -29,7 +30,7 @@ dependencies {
 }
 
 test {
-    testLogging.showStandardStreams = true
+    testLogging.showStandardStreams = false
     afterTest { desc, result -> 
         println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
     }
@@ -37,4 +38,10 @@ test {
 
 task stage{
 	dependsOn installDist
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
 }

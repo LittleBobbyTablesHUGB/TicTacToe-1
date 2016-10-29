@@ -17,7 +17,7 @@ import java.net.URL;
 
 public class IndexSeleniumTest{
 
-	static WebDriver driver;
+	static ChromeDriver driver;
 	static String baseUrl;
 	static String port;
 	

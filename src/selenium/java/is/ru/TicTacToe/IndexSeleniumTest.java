@@ -52,9 +52,9 @@ public abstract class IndexSeleniumTest{
 			driver.close();
 		}
 
-	/*@Test
+	@Test
 		public void testTwoClicks(){
-			driver = new FirefoxDriver();
+			driver = new ChromeDriver();
 			WebDriverWait webWait = new WebDriverWait(driver,20);
 			driver.get(baseUrl);
 			driver.findElement(By.id("1")).click();
@@ -67,7 +67,7 @@ public abstract class IndexSeleniumTest{
 
 	@Test
 		public void testFirstAsWinner(){
-			driver = new FirefoxDriver();
+			driver = new ChromeDriver();
 			WebDriverWait webWait = new WebDriverWait(driver,20);
 			driver.get(baseUrl);
 			driver.findElement(By.id("1")).click();
@@ -83,5 +83,5 @@ public abstract class IndexSeleniumTest{
 			webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("whosTurn")),"X is the winner!"));
 			assertEquals("X is the winner!", driver.findElement(By.id("whosTurn")).getText());
 			driver.close();
-		}*/
+		}
 }

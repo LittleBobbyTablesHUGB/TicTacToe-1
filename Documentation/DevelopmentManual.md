@@ -41,3 +41,5 @@ Mikilvægt er að vera með rétta útgáfu af Java, hægt er að athuga hvaða 
 ==============
 Þegar gerðar eru local breytingar þá þarf að keyra skipunina bin/deploy sem keyrir keyrir clean, package og unit_test og ef allt keyrir án þess að upp komi villur þá keyrist upp leikurinn locally og hægt er að testa í browser með ip-tölunni á vélinni og porti sem stillt er(default er 4567). Þegar allt er farið að virka locally þá er pushað á feature branch og þar keyrir travis build skriptur, unit test og deployar á staging http://littlebobbytablestttstaging.herokuapp.com/ og keyrir þar end-to-end selenium test. Ef allt keyrir eðlilega með success þá deployar travis á production server http://littlebobbytablesttt.herokuapp.com/.
 
+Fyrir allar breytingar þarf að notast við feature branch og stofna pull request þegar allt hefur keyrt eðlilega á Travis. Pull request þarf að samþykkjast af öðrum meðlimum í teyminu.
+

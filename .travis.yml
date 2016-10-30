@@ -8,12 +8,10 @@ after_success:
 install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
  - heroku plugins:install https://github.com/ddollar/heroku-push
-
+ - gem install dpl
 script:
   - ./gradlew check
-  - heroku git:remote -a littlebobbytablestttstaging
-  - heroku login
-  - git push heroku master
+  - dpl --provider=heroku --app=littlebobbytablestttstaging --api-key=$HEROKU_API_KEY --strategy=git
   - ./gradlew seleniumXvfb
 
 deploy:

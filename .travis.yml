@@ -21,3 +21,6 @@ deploy:
   app: littlebobbytablesttt
 
 sudo: required
+env:
+  global:
+    secure: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc

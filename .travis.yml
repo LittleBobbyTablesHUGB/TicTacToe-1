@@ -22,6 +22,6 @@ deploy:
 
 sudo: required
 env:
-  Email=harpage@gmail.com
+  HEROKU_API_KEY=e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
   global:
     secure: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc

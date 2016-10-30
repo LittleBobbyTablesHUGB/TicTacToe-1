@@ -81,7 +81,7 @@ public abstract class IndexSeleniumTest{
 			driver.findElement(By.id("3")).click();        
 			webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("3")),"X"));
 			webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("whosTurn")),"X is the winner!"));
-			assertEquals("X is the winner!", driver.findElement(By.id("whosTurn")).getText());
+			assertEquals("O is the winner!", driver.findElement(By.id("whosTurn")).getText());
 			driver.close();
 		}
 }

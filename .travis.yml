@@ -13,6 +13,7 @@ script:
 - ./gradlew check
 - heroku git:remote -a littlebobbytablestttstaging
 - git push heroku master
+- echo harpage@gmail.com
 - ./gradlew seleniumXvfb
 
 deploy:
@@ -21,7 +22,3 @@ deploy:
   app: littlebobbytablesttt
 
 sudo: required
-env:
-  HEROKU_API_KEY=e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-  global:
-    secure: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc

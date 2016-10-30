@@ -3,21 +3,19 @@ jdk:
   - oraclejdk8
 
 after_success:
+  # If end-to-end tests on staging was succesful the deploy on production 
+  - dpl --provider=heroku --app=littlebobbytablesttt --api-key=$HEROKU_API_KEY --strategy=git
   - bash <(curl -s https://codecov.io/bash)
 
 install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
- - heroku plugins:install https://github.com/ddollar/heroku-push
  - gem install dpl
+
 script:
+  #Deploy to Staging and run selenium end-to-end tests
   - ./gradlew check
   - dpl --provider=heroku --app=littlebobbytablestttstaging --api-key=$HEROKU_API_KEY --strategy=git
   - ./gradlew seleniumXvfb
-
-deploy:
-  provider: heroku
-  api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-  app: littlebobbytablesttt
 
 env:
   global:

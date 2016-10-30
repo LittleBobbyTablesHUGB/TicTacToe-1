@@ -11,9 +11,8 @@ install:
 
 script:
 - ./gradlew check
-- heroku git:remote -a littlebobbytablestttstaging
+- heroku git:remote -a littlebobbytablestttstaging echo:harpage@gmail.com
 - git push heroku master
-- echo harpage@gmail.com
 - ./gradlew seleniumXvfb
 
 deploy:

@@ -3,24 +3,22 @@ jdk:
   - oraclejdk8
 
 after_success:
+  # If end-to-end tests on staging was succesful the deploy on production 
+  - dpl --provider=heroku --app=littlebobbytablesttt --api-key=$HEROKU_API_KEY --strategy=git
   - bash <(curl -s https://codecov.io/bash)
 
 install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
- - heroku plugins:install https://github.com/ddollar/heroku-push
-
-deploy:
-    provider: heroku
-    api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-    app: littlebobbytablestttstaging
+ - gem install dpl
 
 script:
+  #Deploy to Staging and run selenium end-to-end tests
   - ./gradlew check
+  - dpl --provider=heroku --app=littlebobbytablestttstaging --api-key=$HEROKU_API_KEY --strategy=git
   - ./gradlew seleniumXvfb
 
-deploy:
-  provider: heroku
-  api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-  app: littlebobbytablesttt
+env:
+  global:
+    secure: Emw1BahQLtFEeYMEPjg+3OrmAvJTpaGHPpYWKzdpk94wNAisA1cA9t9a6xzVg+NG0EGntQCXIPo2GejKmmQnH0WXp67W0iSc8N/5PEeKM00tmelf3D60qEQA1XZ7kt1Z2W8l8NSlDIC94weUdY5yroo+SfasAGWCdKvnY9mDySNhE3bWTAbzWSI9G0HAfLv3OC4H1S/99EEEKHLooO+T3j0BW1evIxXvHv53LoTwD0kaGNckWj0MAYngEG+wJB1uMyiN4KxDrrFl5jrGVBGhmWHHX4dbP+WHzVOCtEY7YpnZte9Ubswq5mDZKEbuxUDD6FI1KELQh7KDpX0QjARHxbg+XM1peLdGXG1+Fqb+r1nbfvEiIkBfAalhDjSM99l9sPG84VEPn+9L1cuXogU3vSCdN2QTaKfq541dZsC98qd4l1CMnyaFJuxbbaMNinTD6MnnMTrKWTeDP6Obtyxjcx0HY0cagaACk7BYpMh32iqI9JsP4QqRSuClo6aDCAlzx2Lzx9YpXpbf/nh/00wFmBmZdN9FUMU7coF958fHnLik58aQ/CLj8TONkPZ3EKiMNEjy8FSZvuFLnXmOhV5SCcLYJnMBhnqJqqW4pbZWiy6Vve4i9/Qg74CP7rAh8q0PqeUJ6d0tGZEPU9/0xezGrSTJfq/QeQDHQvdqs7sAvMA= 
 
 sudo: required

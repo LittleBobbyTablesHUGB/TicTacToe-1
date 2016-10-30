@@ -12,9 +12,8 @@ install:
 deploy:
     provider: heroku
     api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-    app: littlebobbytablestttstaging
-    on: 
-	all_branches: true
+    app: 
+	all_branches:littlebobbytablestttstaging
 
 after_deploy:
   - ./gradlew check

@@ -9,10 +9,13 @@ install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
  - heroku plugins:install https://github.com/ddollar/heroku-push
 
+deploy:
+  provider: heroku
+  api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
+  app: littlebobbytablestttstaging
+
 script:
 - ./gradlew check
-- heroku git:remote -a littlebobbytablestttstaging echo:harpage@gmail.com
-- git push heroku master
 - ./gradlew seleniumXvfb
 
 deploy:

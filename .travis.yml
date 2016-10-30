@@ -9,19 +9,19 @@ install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
  - heroku plugins:install https://github.com/ddollar/heroku-push
 
-deploy:
-    provider: heroku
-    api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
-    app: 
-	all_branches:littlebobbytablestttstaging
-
-after_deploy:
+script:
   - ./gradlew check
+  - heroku git:remote -a littlebobbytablestttstaging
+  - git push heroku master
   - ./gradlew seleniumXvfb
 
 deploy:
   provider: heroku
   api_key: e82b9f19-bf7d-434a-9f3b-0bf7fb5bc1dc
   app: littlebobbytablesttt
+
+env:
+  global:
+    secure: bo/AFZEm4BIXYK+0/Um2qNNwCLxMyIalbVJ1CQyKu13j3E2Br9MU8qerRBjTlZeoQI0+8UWx/6ap779RCuBP6RcQdXvH/wcvRv/WPBiOdoLITDSS8hSOwgcy2Dma76nRlD9dh/PbPB4setQy51Jmh3GJyRHIONe2A7DzfzjTKbYfD1wDXo5I+6J1kM6HsrSVpXnl4rPZR2353kslifv8J9J2717zvSb9o4nWmmhgstRNxN74peS44Q0CnFCkDgSXYOEp6tymqslNYna/74H/atRPJvjSwMvvNQV3T7Qt9s5lA9x+/f902NrpqlwpUluyc4hATwUx2ftLs/I0dBn/XeqxNn5JdKXbRsP5SFNXtExcHQRvLU/r5cz7nn2jcAFNMST0yoh92t1yik1h/sD7oJIY1sQ8Tasfq8xhqc0zRVkgN396LvleR3whtmsDaH17tvOFcU0R5F2Ee5jgc6PR8RZK3lOD+oiqSUhKZtnvQP+fxChIGO+zMu2Rhi8ORlyvE+/WMA+DbhpINolJvwSA5aUlj5DzAGr9lHK2Q/5u5LS5MKNKmHsKmbtKYmLxcxR4zaxwNNj1mbZ6kqDT2KubV7AGcFFkmXMjBuhrDMbfdqLukfIwB1835V1gTSuzs3124cqAhkWnPCvAWBic5N4/QGVo4LyQ64rTuPTjoTi8s24=
 
 sudo: required

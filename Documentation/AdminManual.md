@@ -1,30 +1,28 @@
 Admin Manual
 ====================
-1. Uppsetning á Git og Heroku
+1. Uppsetning Ã¡ Git og Heroku
 ====
-Til ağ geta hafist handa er nauğsynlegt ağ hafa virkan GitHub ağgang. Şegar sá ağgangur er til stağar er hægt ağ velja á milli şess ağ setja upp ssh lykil (key) eğa notast viğ notendanafn og lykilorğ. Ağ lokum şarf ağ sækja Heroku toolbelt.
+Til aÃ° geta hafist handa er nauÃ°synlegt aÃ° hafa virkan GitHub aÃ°gang. Ãegar sÃ¡ aÃ°gangur er til staÃ°ar er hÃ¦gt aÃ° velja Ã¡ milli Ã¾ess aÃ° setja upp ssh lykil (key) eÃ°a notast viÃ° notendanafn og lykilorÃ°. AÃ° lokum Ã¾arf aÃ° sÃ¦kja Heroku toolbelt.
 
- Til ağ auğvelda uppsetningu er hægt ağ fylgja eftirfarandi leiğbeiningum
+ Til aÃ° auÃ°velda uppsetningu er hÃ¦gt aÃ° fylgja eftirfarandi leiÃ°beiningum
 
   - https://help.github.com/articles/set-up-git
   - https://help.github.com/articles/generating-ssh-keys
   - https://devcenter.heroku.com/articles/quickstart
 
-2.Pull og Deploy
+2.VerkefniÃ° sÃ³tt
 ====
-Í upphafi şarf ağ búa til afrit af skránum meğ şví ağ gera skipunina git 
-copy og afrita slóğina https://github.com/LittleBobbyTablesHUGB/TicTacToe-1.git
+Til aÃ° sÃ¦kja verkefniÃ° Ã­ upphafi Ã¾Ã¡ ferÃ°u inn Ã¡ https://github.com/LittleBobbyTablesHUGB/TicTacToe-1 og smellir Ã¡ hnappinn clone or download. ÃÃ¡ getur Ã¾Ãº valiÃ° hvort Ã¾Ãº viljir notast viÃ° ssh lykil eÃ°a https slÃ³Ã°. ÃÃº afritar Ã¾vÃ­ viÃ°eigandi slÃ³Ã° og ferÃ° inn Ã­ gitbash/terminal og skrifar git clone git@github.com:LittleBobbyTablesHUGB/TicTacToe-1.git . 
 
-síğan şarftu ağ fara inn í dorectory sem sótt var meğ fyrir ağgerğ meğ şví ağ gefa skipunina 
+Ãegar Ã¾etta er komiÃ° Ã¾Ã¡ Ã¾arftu aÃ° velja rÃ©tt directory/verkefni meÃ° Ã¾vÃ­ aÃ° gera skipunina 
 - cd TicTacToe-1
+Ef maÃ°ur veit ekki hvaÃ° verkefniÃ° heitir nÃ¡kvÃ¦mlega er gott aÃ° gera skipuna - ls en Ã¾Ã¡ geturu sÃ©Ã° nÃ¡kvÃ¦mlega hvaÃ° verkefniÃ° heitir. 
 
-seinasta skrefiğ er ağ færa verkefniğ á Heroku serverinn meğ şví ağ gefa skipunina 
-- git push Heroku master
-
-3.Viğhald
+3.UppfÃ¦rsla
 ====
-Ef şörf er á ağ uppfæra útgáfu eğa serverinn şinn şá şarftu ağ vera stağsettur í TicTacToe-1/directory og gefa eftirfarandi skipanir:
+Ef Ã¾Ã¶rf er Ã¡ aÃ° uppfÃ¦ra ÃºtgÃ¡fu eÃ°a serverinn Ã¾inn Ã¾Ã¡ Ã¾arftu aÃ° vera staÃ°settur Ã­ TicTacToe-1/directory og gefa eftirfarandi skipanir:
+
 -git pull 
--git push Heroku master
+
   
  
